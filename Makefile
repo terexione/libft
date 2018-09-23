@@ -1,5 +1,5 @@
 NAME = libft.a
-SRC = srcs/ft_bzero.c srcs/ft_memcpy.c srcs/ft_memmove.c srcs/ft_memset.c
+SRC = srcs/ft_bzero.c srcs/ft_memcpy.c srcs/ft_memmove.c srcs/ft_memset.c srcs/ft_putstr.c
 OBJECT = ft_*.o
 HEADER = /includes/libft.h
 all:
