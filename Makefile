@@ -1,7 +1,7 @@
 NAME = libft.a
 SRC = srcs/ft_bzero.c srcs/ft_memcpy.c srcs/ft_memmove.c srcs/ft_memset.c
 OBJECT = ft_*.o
-HEADER = /includes/*.h
+HEADER = /includes/libft.h
 all:
 	gcc -Wall -Werror -Wextra -c $(SRC) -I $(HEADER)
 	ar rc $(NAME) ft_*.o
