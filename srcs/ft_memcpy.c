@@ -6,8 +6,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*ptr1;
 	const char	*ptr2;
 
-	if (!dest || !src)
-		return ((void*) 0);
 	i = 0;
 	ptr1 = dest;
 	ptr2 = src;

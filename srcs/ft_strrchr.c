@@ -3,9 +3,8 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
-	if (!s)
-		return ((void *) 0);
-	i = (int)ft_strlen(s);
+
+	i = (int)ft_strlen(s) + 1;
 	while (--i >= 0)
 	{
 		if (s[i] == (char) c)

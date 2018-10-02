@@ -4,8 +4,6 @@ char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t	i;
 	
-	if (!dest || !src)
-		return ((void *) 0);
 	i = -1;
 	while (src[++i])
 		dest[i] = src[i];

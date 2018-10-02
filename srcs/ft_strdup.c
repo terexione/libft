@@ -4,9 +4,9 @@ char	*ft_strdup(const char *s)
 {
 	size_t	i;
 	char	*dest;
-	if (!s)
-		return ((void*) 0);
-	dest = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
+
+	if(!(dest = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return ((void *) 0);
 	i = 0;
 	while (s[i])
 	{

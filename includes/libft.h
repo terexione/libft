@@ -33,5 +33,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
+void    *ft_memalloc(size_t size)
+
 
 #endif

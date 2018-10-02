@@ -1,12 +1,10 @@
 #include "../includes/libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (!big || !little)
-		return ((void *) 0);
 	i = 0;
 	while (i < len)
 	{
