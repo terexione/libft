@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asansyzb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/23 15:20:25 by asansyzb          #+#    #+#             */
+/*   Updated: 2018/10/23 15:20:49 by asansyzb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/libft.h"
 
-int	ft_atoi(const char *nptr)
+int			ft_atoi(const char *nptr)
 {
 	size_t	i;
-	int	sign;
-	int	res;
+	int		sign;
+	int		res;
 
 	i = 0;
 	sign = 1;

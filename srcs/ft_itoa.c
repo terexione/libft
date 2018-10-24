@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asansyzb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/23 15:49:32 by asansyzb          #+#    #+#             */
+/*   Updated: 2018/10/23 16:43:02 by asansyzb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/libft.h"
 
-int					get_len(int nbr)
+static int		get_len(int nbr)
 {
 	size_t	i;
 
@@ -12,7 +24,7 @@ int					get_len(int nbr)
 	return (i);
 }
 
-char				*ft_itoa(int nbr)
+char			*ft_itoa(int nbr)
 {
 	char			*dest;
 	unsigned int	n;
@@ -23,7 +35,7 @@ char				*ft_itoa(int nbr)
 	if (nbr < 0)
 		n = -nbr;
 	if (!(dest = ft_strnew(i + 1)))
-		return ((void*) 0);
+		return ((void*)0);
 	dest[i] = n % 10 + '0';
 	while (n /= 10)
 		dest[--i] = n % 10 + '0';

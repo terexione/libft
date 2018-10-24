@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asansyzb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/23 16:15:51 by asansyzb          #+#    #+#             */
+/*   Updated: 2018/10/23 16:23:24 by asansyzb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/libft.h"
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
@@ -15,4 +27,3 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 	dest[dest_len + i] = '\0';
 	return (dest);
 }
-
