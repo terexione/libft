@@ -10,12 +10,8 @@ $(NAME):
 	@gcc $(CFLAGS) -c $(SRC) -I $(HEADER)
 	@ar rc $(NAME) ft_*.o
 	@ranlib $(NAME)
-so:
-	gcc $(CFLAGS) -g -fPIC $(SRC) -shared -pedantic -o libft.so
 clean:
 	/bin/rm -f $(OBJECT)
 fclean: clean
 	/bin/rm -f $(NAME)
 re:	fclean all
-
-.PHONY: clean fclean all re
