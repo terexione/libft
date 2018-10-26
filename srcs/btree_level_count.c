@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   btree_level_count.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asansyzb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/23 15:34:03 by asansyzb          #+#    #+#             */
-/*   Updated: 2018/10/23 19:23:29 by asansyzb         ###   ########.fr       */
+/*   Created: 2018/10/24 23:04:50 by asansyzb          #+#    #+#             */
+/*   Updated: 2018/10/24 23:07:31 by asansyzb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+int		btree_level_count(t_btree *root)
 {
-	size_t	i;
-	size_t	j;
+	int	cnt;
+	int	l;
+	int	r;
 
-	i = 0;
-	while (big[i] && i < len)
+	cnt = 0;
+	l = 0;
+	r = 0;
+	if (root)
 	{
-		j = 0;
-		while (big[i] != '\0' && little[j] != '\0' &&
-				i < len && big[i] == little[j])
-		{
-			i++;
-			j++;
-		}
-		if (little[j] == '\0')
-			return ((char*)big + i - j);
-		i -= j;
-		i++;
+		l = btree_level_count(root->left);
+		r = btree_level_count(root->right);
+		return (1 + ft_max(l, r));
 	}
-	return ((void*)0);
+	return (cnt);
 }

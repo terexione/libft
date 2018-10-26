@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   btree_create_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asansyzb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/23 15:34:03 by asansyzb          #+#    #+#             */
-/*   Updated: 2018/10/23 19:23:29 by asansyzb         ###   ########.fr       */
+/*   Created: 2018/10/24 22:58:11 by asansyzb          #+#    #+#             */
+/*   Updated: 2018/10/24 22:58:26 by asansyzb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+t_btree		*btree_create_node(void *item)
 {
-	size_t	i;
-	size_t	j;
+	t_btree	*new;
 
-	i = 0;
-	while (big[i] && i < len)
-	{
-		j = 0;
-		while (big[i] != '\0' && little[j] != '\0' &&
-				i < len && big[i] == little[j])
-		{
-			i++;
-			j++;
-		}
-		if (little[j] == '\0')
-			return ((char*)big + i - j);
-		i -= j;
-		i++;
-	}
-	return ((void*)0);
+	if (!(new = malloc(sizeof(t_btree))))
+		return (NULL);
+	new->left = 0;
+	new->right = 0;
+	new->item = item;
+	return (new);
 }

@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   btree_search_item.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asansyzb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/23 15:34:03 by asansyzb          #+#    #+#             */
-/*   Updated: 2018/10/23 19:23:29 by asansyzb         ###   ########.fr       */
+/*   Created: 2018/10/24 23:04:12 by asansyzb          #+#    #+#             */
+/*   Updated: 2018/10/24 23:04:29 by asansyzb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*btree_search_item(t_btree *root, void *data_ref,
+		int (*cmpf)(void *, void *))
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	while (big[i] && i < len)
+	if (root)
 	{
-		j = 0;
-		while (big[i] != '\0' && little[j] != '\0' &&
-				i < len && big[i] == little[j])
-		{
-			i++;
-			j++;
-		}
-		if (little[j] == '\0')
-			return ((char*)big + i - j);
-		i -= j;
-		i++;
+		if (!root)
+			return (NULL);
+		if (root->left)
+			return (btree_search_item(root->left, data_ref, cmpf));
+		if (cmpf(root->item, data_ref) == 0)
+			return (root->item);
+		if (root->right)
+			return (btree_search_item(root->right, data_ref, cmpf));
 	}
-	return ((void*)0);
+	return (NULL);
 }
